@@ -1,0 +1,22 @@
+@use "./assets/sass/_variables.scss" as *;
+
+.punk-api{
+  display: flex;
+  border: 1px solid $color-black;
+  margin: 20px;
+  width: fit-content;
+&__nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+&__main {
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  border: 1px solid $color-black;
+  padding: 20px;
+
+}
+}

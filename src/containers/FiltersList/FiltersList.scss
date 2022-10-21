@@ -1,0 +1,13 @@
+@use "../../assets/sass/_variables.scss" as *;
+
+.punk-api__nav__filters {
+  
+    h3{
+      font-size: 14px;
+      font-weight: normal;
+    }
+    &__filter{
+      display:flex;
+      justify-content: space-between;
+    }
+  }
