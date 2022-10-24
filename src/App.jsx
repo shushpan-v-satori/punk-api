@@ -10,7 +10,7 @@ const App = () => {
   // fetch results from api
   const [beers, setBeers] = useState([]);
 
-  const url='https://api.punkapi.com/v2/beers'
+  const url='https://api.punkapi.com/v2/beers?page=2&per_page=80'
 
   const getBeers = async () => {
     let res = await fetch(url);
@@ -28,7 +28,6 @@ const App = () => {
   const [searchTerm, setSearchTerm] = useState("Search...");
 
   const searchInputValue = (event) => {  
-    console.log("in clean Input");
    if ((event.target.value) === 'Search...') {
     setSearchTerm('');
    }
@@ -44,15 +43,21 @@ const App = () => {
 
   // filtering out without images
 
-  const [checked , setChecked] =useState(false);
-  const [filterValue, setFilterValue] = useState("");
+  const [beersHighAbv , setBeersHighAbv] =useState(false);
+  const [beersClassicRange , setBeersClassicRange] =useState(false);
+  const [beersAcidicPh4 , setBeersAcidicPh4] =useState(false);
 
-  const createFilter = (event) => {
-    setChecked(event.target.checked);
-    setFilterValue(event.target.value); 
+  const beersHighAbvFunction = (event) => {
+    setBeersHighAbv(!beersHighAbv);
   }
 
-  console.log(filterValue, checked);
+  const beersClassicRangeFunction = (event) => {
+    setBeersClassicRange(!beersClassicRange);
+  }
+
+  const beersAcidicPh4Funciton = (event) => {
+    setBeersAcidicPh4(!beersAcidicPh4);
+  }
 
   const filteredItems = beers.filter((beer) => {
     console.log("in filtered by fllter");
@@ -61,12 +66,10 @@ const App = () => {
     const cleanSearchInput=searchTerm.toLowerCase();
     return ((searchTerm!="Search...") ? (beerNameLower.includes(cleanSearchInput) ||
     beerTagline.includes(cleanSearchInput)) : true)
-    &&((filterValue==="beersHighAbv" && checked) ? beer.abv>6 : true)
-    &&((filterValue==='beersClassicRange' && checked) ? Number(beer.first_brewed.substr(3, 6))<2010 : true)
-    &&((filterValue==='beersAcidicPh4' && checked) ? (parseFloat(beer.ph) < 4) : true)
+    &&(beersHighAbv ? beer.abv>6 : true)
+    &&(beersClassicRange ? Number(beer.first_brewed.substr(3, 6))<2010 : true)
+    &&(beersAcidicPh4 ? (parseFloat(beer.ph) < 4) : true)
   }); 
-
-console.log(filteredItems);
 
   return (
     <div className="punk-api">
@@ -77,7 +80,9 @@ console.log(filteredItems);
         searchInputValue={searchInputValue}
         />
         <FiltersList
-          createFilter={createFilter}
+          beersHighAbvFunction ={beersHighAbvFunction}
+          beersClassicRangeFunction = {beersClassicRangeFunction}
+          beersAcidicPh4Funciton = {beersAcidicPh4Funciton}
         />
       </section>
      <CardList cardsList={filteredItems} />
