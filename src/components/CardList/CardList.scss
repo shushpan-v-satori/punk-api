@@ -1,1 +1,9 @@
 @use "../../assets/sass/variables.scss" as *;
+
+.punk-api__main {
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 20px;
+    border: 1px solid $color-darkblue;
+    padding: 20px;
+  }

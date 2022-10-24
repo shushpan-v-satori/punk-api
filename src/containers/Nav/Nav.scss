@@ -1,0 +1,8 @@
+@use "../../assets/sass/variables.scss" as *;
+
+.punk-api__nav {
+    background-color: $color-lightgreen;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }

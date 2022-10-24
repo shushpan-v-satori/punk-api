@@ -1,9 +1,13 @@
 @use "../../assets/sass/_variables.scss" as *;
 
 .punk-api__nav__search{
-    color: $color-grey;
+    color: $color-darkbrown;
+    background-color: $color-orange;
+    border-radius: 10px;
+    border: 2px solid $color-orange;
+    
   }
 
 .punk-api__nav__search:focus {
-    color: $color-black;
+    color: $color-darkblue;
 }

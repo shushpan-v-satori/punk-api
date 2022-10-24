@@ -1,25 +1,39 @@
 @use "../../assets/sass/variables.scss" as *;
 
 .punk-api__main__card{
+    color: $color-lightgreen;
+    background-color: $color-lightorange;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    border: 1px solid $color-black;
+    border: 3px solid $color-lightgreen;
+    border-radius: 10px;
+    box-shadow: 5px 5px 5px $color-darkbrown;
     width: 200px;
+    
     .card__image {
-      height: 200px;
+      height: 100px;
       padding: 10px;
     }
     .card__name{
-        height: 24px;
+      height: 24px;
       text-align: center;
-      font-size: 14px;
+      font-size: 18px;
       padding: 10px;
     }
     .card__tagline{
-        height: 24px;
+      height: 24px;
       font-size: 14px;
       padding: 10px;
+    }
+
+    .card_additional-info {
+      display: flex;
+      justify-content: space-evenly;
+      p{
+        font-size: 12px;
+        margin: 20px;
+      }
     }
   }
