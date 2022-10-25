@@ -8,7 +8,7 @@ const Nav = (props) => {
     const { beersHighAbvFunction, beersClassicRangeFunction, beersAcidicPh4Function, searchTerm, handleInput, searchInputValue } = props;
 
   return (
-    <section className="punk-api__nav">
+    <section className="punk-api__nav" name="nav">
         <SearchBox 
         searchTerm={searchTerm} 
         handleInput={handleInput} 

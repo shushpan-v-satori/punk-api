@@ -7,7 +7,7 @@ const App = () => {
   // fetch results from api
   const [beers, setBeers] = useState([]);
 
-  const url = "https://api.punkapi.com/v2/beers?page=2&per_page=80";
+  const url = "https://api.punkapi.com/v2/beers?page=1&per_page=80";
 
   const getBeers = async () => {
     let res = await fetch(url);
@@ -87,7 +87,7 @@ const App = () => {
         beersAcidicPh4Function={beersAcidicPh4Function}
       />
       {filteredItems.length > 0 ? (
-        <CardList cardsList={filteredItems} />
+        <CardList cardsList={filteredItems} name="card_list"/>
       ) : (
         <p className="punk-api__empty-search">
           Nothing to display, please modify your search
