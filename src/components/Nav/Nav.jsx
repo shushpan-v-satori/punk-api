@@ -1,7 +1,7 @@
 import React from 'react'
 import "./Nav.scss"
-import SearchBox from "../../components/SearchBox/SearchBox"
-import FiltersList from "../../components/FiltersList/FiltersList"
+import SearchBox from "../SearchBox/SearchBox"
+import FiltersList from "../FiltersList/FiltersList"
 
 const Nav = (props) => {
 

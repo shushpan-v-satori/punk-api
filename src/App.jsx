@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.scss";
 import CardList from "./components/CardList/CardList";
-import Nav from "./containers/Nav/Nav";
+import Nav from "./components/Nav/Nav";
 
 const App = () => {
 
@@ -30,7 +30,6 @@ const App = () => {
   };
 
   const handleInput = (event) => {
-    console.log("in handle input");
     const searchInput = event.target.value;
     setSearchTerm(searchInput);
   };
@@ -41,22 +40,18 @@ const App = () => {
   const [beersAcidicPh4, setBeersAcidicPh4] = useState(false);
 
   const beersHighAbvFunction = (event) => {
-    console.log("in high abv");
     setBeersHighAbv(!beersHighAbv);
   };
 
   const beersClassicRangeFunction = (event) => {
-    console.log("in classic range");
     setBeersClassicRange(!beersClassicRange);
   };
 
   const beersAcidicPh4Function = (event) => {
-    console.log("in Ph4");
     setBeersAcidicPh4(!beersAcidicPh4);
   };
 
   const filteredItems = beers.filter((beer) => {
-    console.log("in filtered by fllter");
     const beerNameLower = beer.name.toLowerCase();
     const beerTagline = beer.tagline.toLowerCase();
     const cleanSearchInput = searchTerm.toLowerCase();
