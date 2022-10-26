@@ -159,7 +159,7 @@ test("should filter with #2 and display Trashy Blonde", async () => {
   userEvent.click(myCheckbox);
 });
 
-test("should filter with #2 and display Whisky Sour - B-Sides", async () => {
+test("should filter with #3 and display Whisky Sour - B-Sides", async () => {
   render(<App />);
   await waitFor(() => expect(screen.getByText("Buzz")).toBeInTheDocument(), {timeout: 2000});
   const myCheckbox = screen.getByRole('checkbox', {name: "Acidic (ph < 4)"});
@@ -171,11 +171,12 @@ test("should filter with #2 and display Whisky Sour - B-Sides", async () => {
   userEvent.click(myCheckbox);
 });
 
-test("should fetch and display Buzz", async () => {
+test("should search for Pilsner", async () => {
   render(<App />);
   await waitFor(() => expect(screen.getByText("Buzz")).toBeInTheDocument(), {timeout: 2000});
   const mySearch = screen.getByRole('textbox');
   userEvent.type(mySearch, "ils");
+  expect(screen.getByText("Sub Hop")).toBeInTheDocument()
 });
 
 });
