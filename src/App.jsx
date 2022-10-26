@@ -4,6 +4,7 @@ import CardList from "./components/CardList/CardList";
 import Nav from "./containers/Nav/Nav";
 
 const App = () => {
+
   // fetch results from api
   const [beers, setBeers] = useState([]);
 
@@ -20,7 +21,6 @@ const App = () => {
   }, []);
 
   //working with search
-
   const [searchTerm, setSearchTerm] = useState("Search...");
 
   const searchInputValue = (event) => {
@@ -36,9 +36,6 @@ const App = () => {
   };
 
   //working with filters
-
-  // filtering out without images
-
   const [beersHighAbv, setBeersHighAbv] = useState(false);
   const [beersClassicRange, setBeersClassicRange] = useState(false);
   const [beersAcidicPh4, setBeersAcidicPh4] = useState(false);
