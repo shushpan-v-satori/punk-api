@@ -13,8 +13,8 @@ const Card = (props) => {
 
   return (
     <div className='punk-api__main__card'>
-    <img className='card__image'src={card_image} alt={card_name}/>
-    <h3 className='card__name'>{card_name}</h3>
+    <img className='card__image'src={card_image} alt={card_name} />
+    <h3 className='card__name' >{card_name}</h3>
     <p className='card__tagline'>{card_year}</p>
     <p className='card__tagline'>{card_tagline}</p>
       <div className='card_additional-info'>
